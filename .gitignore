@@ -1,0 +1,5 @@
+node_modules/
+*.tsbuildinfo
+*.tgz
+.npm-cache/
+lib/native/*.exe

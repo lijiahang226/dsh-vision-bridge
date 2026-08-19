@@ -1,0 +1,19 @@
+# dsh-vision-bridge 装配示例
+# 复制到 $DSH_HOME/profiles/<name>/cordis.patch.yml（或合并进现有 patch）即可。
+# 先确保 profile 里安装了 dsh-vision-bridge（pnpm add / 本地 tgz）。
+- insert:
+    - id: vision-bridge
+      name: 'dsh-vision-bridge'
+      config:
+        baseURL: 'https://api.openai.com/v1'
+        apiKeyEnv: 'VISION_API_KEY'
+        model: 'gpt-4o-mini'
+        maxTokens: 4096
+        timeoutMs: 60000
+        maxImageBytes: 10485760
+        enableTextModelBridge: true
+        autoUnderstand: true
+        promptTemplate: 'Describe this image in detail, including all key visual elements, text, and context you can see.'
+        nativeImageModels:
+          - gpt-4o
+          - gpt-4o-mini

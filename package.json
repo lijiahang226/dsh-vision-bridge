@@ -1,0 +1,64 @@
+{
+  "name": "dsh-vision-bridge",
+  "version": "0.2.0",
+  "description": "DSH vision bridge plugin: automatically understands images for text-only models via an external multimodal model, and provides analyze_image / screen_analyze tools.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "native",
+    "scripts/build.sh",
+    "examples/cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "test": "node test/run-tests.js"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "vision",
+    "multimodal",
+    "plugin",
+    "analyze-image",
+    "screen-analyze"
+  ],
+  "author": "Li Jiahang <216526138+lijiahang226@users.noreply.github.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijiahang226/dsh-vision-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lijiahang226/dsh-vision-bridge/issues"
+  },
+  "homepage": "https://github.com/lijiahang226/dsh-vision-bridge#readme",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-settings": ">=0.0.1-rc <2",
+    "@deepseek-ai/dsh-tools": ">=0.0.1-rc <2",
+    "cordis": ">=4.0.0-rc <5",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  }
+}
